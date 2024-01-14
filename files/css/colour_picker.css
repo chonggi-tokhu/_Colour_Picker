@@ -29,7 +29,7 @@ colourpicker .picker-inner .scrollbar .scroll {
     left: -2em;
     position: relative;
     width: 2em;
-    height: 2em;
+    height: 3em;
     border-right: 2em solid #777;
     border-bottom: 1em solid transparent;
     border-top: 1em solid transparent;

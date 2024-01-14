@@ -1064,7 +1064,7 @@ colourpickerClass.prototype = {
         });
         scrollbar.addEventListener("click", function (ev) {
             if (ev.clientX > paletteEl.clientLeft) {
-                scrollbtn.style.top = ev.clientY - (scrollbtn.clientHeight * 1.6) + "px";
+                scrollbtn.style.top = ev.clientY - (scrollbtn.clientHeight * 2) + "px";
                 var gotColour = thisobj.getColourOnPositionOfScroll(createdPicker.els.scrollbar.els.scroll.el, ev);
                 startingcolour = gotColour;
                 createdPicker.els.palette.els.newPaletteInner.el.style.background = `linear-gradient(to bottom, ${startingcolour + '00'},#000000ff)`;
