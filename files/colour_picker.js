@@ -22,7 +22,7 @@ function dectohex(dec) {
     var rtv = '';
     var numberlog2 = [];
     var numberlog = [];
-    var powernumber = (function () { var rtv0 = newCode; for (var i4 = 0; i4 < newCode; i4++) { if (rtv0 % 16 != 0) { return 0; } rtv0 = (rtv0 - (rtv0 % 16)) / 16; console.log(rtv0); if (rtv0 % 16 == rtv0) { return i4 + 1; } } })();
+    var powernumber = (function () { var rtv0 = newCode; for (var i4 = 0; i4 < newCode; i4++) { if (rtv0 % 16 != 0) { return 0; } rtv0 = (rtv0 - (rtv0 % 16)) / 16; if (rtv0 % 16 == rtv0) { return i4 + 1; } } })();
     var mpnumber = 0;
     var sthtobesubtracted = 0;
     var newval = 0;
@@ -44,7 +44,6 @@ function dectohex(dec) {
         if (newval >= 16) {
             newCode1 = newval % 16
             newval = (newval - (newval % 16)) / 16;
-            console.log((newval - (newval % 16)) / 16);
             if (typeof decCodeTable[newCode1] != "undefined")
                 numberlog2[numberlog2.length] = decCodeTable[newCode1];
             if (newval < 16) {
@@ -409,7 +408,7 @@ colourpickerClass.prototype = {
         var rtv = '';
         var numberlog2 = [];
         var numberlog = [];
-        var powernumber = (function () { var rtv0 = newCode; for (var i4 = 0; i4 < newCode; i4++) { if (rtv0 % 16 != 0) { return 0; } rtv0 = (rtv0 - (rtv0 % 16)) / 16; console.log(rtv0); if (rtv0 % 16 == rtv0) { return i4 + 1; } } })();
+        var powernumber = (function () { var rtv0 = newCode; for (var i4 = 0; i4 < newCode; i4++) { if (rtv0 % 16 != 0) { return 0; } rtv0 = (rtv0 - (rtv0 % 16)) / 16; if (rtv0 % 16 == rtv0) { return i4 + 1; } } })();
         var mpnumber = 0;
         var sthtobesubtracted = 0;
         var newval = 0;
@@ -431,7 +430,6 @@ colourpickerClass.prototype = {
             if (newval >= 16) {
                 newCode1 = newval % 16
                 newval = (newval - (newval % 16)) / 16;
-                console.log((newval - (newval % 16)) / 16);
                 if (typeof decCodeTable[newCode1] != "undefined")
                     numberlog2[numberlog2.length] = decCodeTable[newCode1];
                 if (newval < 16) {
@@ -545,7 +543,6 @@ colourpickerClass.prototype = {
         var [newred0, newgreen0, newblue0, newalpha0] = rgba3;
         var hexcode4 = this.rgbatohexcode({ r: newred0, g: newgreen0, b: newblue0, a: newalpha0 });
         var hexcode3 = hexcode4[0] + hexcode4[1] + hexcode4[2] + hexcode4[3] + hexcode4[4] + hexcode4[5];
-        console.log(hexcode3);
         /*
                         document.getElementById('demo').style.background = `#${hexcode3}`;*/
         document.getElementById("demo").style.background = `rgba(${newred0},${newgreen0},${newblue0},${newalpha0})`;
@@ -554,56 +551,8 @@ colourpickerClass.prototype = {
 
 
 
-        /*var red = ((hextodec(newColourobj1['r']) * newalpha1 * (1 - newalpha2)) + (hextodec(newColourobj2['r']) * newalpha2));
-        var green = ((hextodec(newColourobj1['g']) * newalpha1 * (1 - newalpha2)) + (hextodec(newColourobj2['g']) * newalpha2));
-        var blue = ((hextodec(newColourobj1['b']) * newalpha1 * (1 - newalpha2)) + (hextodec(newColourobj2['b']) * newalpha2));
-
-        console.log(alphaval);
-        console.log(red);
-        console.log(green);
-        console.log(blue);
-        var redval = Math.floor(red);
-        var greenval = Math.floor(green);
-        var blueval = Math.floor(blue);
-        var alphaval2 = Math.floor(alphaval * 255);
-        alphaval2 = 255;
-        var redtort = dectohex(redval);
-        var greentort = dectohex(greenval);
-        var bluetort = dectohex(blueval);
-        var alphatort = dectohex(alphaval2);
-        if (redval == 0) {
-            redtort = '00';
-        }
-        if (greenval == 0) {
-            greentort = '00';
-        }
-        if (blueval == 0) {
-            bluetort = '00';
-        }
-        if (alphaval2 == 0) {
-            alphatort = '00';
-        }
-        if (redtort.length == 1) {
-            redtort = '0' + redtort;
-        }
-        if (greentort.length == 1) {
-            greentort = '0' + greentort;
-        }
-        if (bluetort.length == 1) {
-            bluetort = '0' + bluetort;
-        }
-        if (alphatort.length == 1) {
-            alphatort = '0' + alphatort;
-        }
-        rtv = redtort + greentort + bluetort + alphatort;
-        console.log(rtv);
-        return rtv;*/
         return hexcode3;
 
-    },
-    mathematical() {
-        var newmathematical = new mathematical();
-        return new newmathematical.funcsandGraph();
     },
     hexToRGBObj(code) {
         var hexCodeObj = {};
@@ -691,9 +640,6 @@ colourpickerClass.prototype = {
             var scrollbarheight8 = el.parentElement.clientHeight * 7;
             var eventTopOnScrollbar7 = eventTopOnScrollbar * 7;
             var colour1 = eventTopOnScrollbar;
-            console.log(colour1);
-            console.log(eventTop);
-            console.log(el.parentElement.clientTop);
             var colourtopicked = {};
             if (colour1 <= el.parentElement.clientHeight / 6) {
                 var red = 255;
@@ -701,39 +647,31 @@ colourpickerClass.prototype = {
                 colourtopicked['r'] = red;
                 colourtopicked['g'] = green * ((colour1) / (el.parentElement.clientHeight / 6));
                 colourtopicked['b'] = 0;
-                console.log((colour1) / (el.parentElement.clientHeight / 6));
-                console.log('between #ff0000 and #ffff00');
             } else if (colour1 <= el.parentElement.clientHeight / 6 * 2) {
                 var red = hextodec('ff')
                 colourtopicked['r'] = red * (((el.parentElement.clientHeight / 6) - ((colour1) - (el.parentElement.clientHeight / 6 * 1))) / (el.parentElement.clientHeight / 6));
                 colourtopicked['g'] = 255;
                 colourtopicked['b'] = 0;
-                console.log('between #ffff00 and #00ff00');
             } else if (colour1 <= el.parentElement.clientHeight / 6 * 3) {
                 var blue = hextodec('ff');
                 colourtopicked['r'] = 0;
                 colourtopicked['g'] = 255;
                 colourtopicked['b'] = blue * ((((el.parentElement.clientHeight) - (colour1 - (el.parentElement.clientHeight / 6 * 2))) / (el.parentElement.clientHeight / 6)));
-                console.log('between #00ff00 and #00ffff');
             } else if (colour1 <= el.parentElement.clientHeight / 6 * 4) {
                 var blue = hextodec('ff');
                 colourtopicked['r'] = 0;
                 colourtopicked['g'] = blue * ((((colour1 - (el.parentElement.clientHeight / 6 * 3))) / (el.parentElement.clientHeight / 6)));
                 colourtopicked['b'] = 255;
-                console.log('between #00ffff and #0000ff');
             } else if (colour1 <= el.parentElement.clientHeight / 6 * 5) {
                 var blue = hextodec('ff');
                 colourtopicked['r'] = blue * ((el.parentElement.clientHeight / 6) - (colour1 - (el.parentElement.clientHeight / 6 * 4)) / (el.parentElement.clientHeight / 6));
                 colourtopicked['g'] = 0;
                 colourtopicked['b'] = 255;
-                console.log('between #0000ff and #ff00ff');
             } else if (colour1 <= el.parentElement.clientHeight / 6 * 6) {
                 var blue = hextodec('ff');
                 colourtopicked['r'] = 255;
                 colourtopicked['g'] = 0;
                 colourtopicked['b'] = blue * ((((el.parentElement.clientHeight / 6) - (colour1 - (el.parentElement.clientHeight / 6 * 5))) / (el.parentElement.clientHeight / 6)));
-                console.log(`following number is how blue colour you picked is` + ((((el.parentElement.clientHeight / 6) - (colour1 - (el.parentElement.clientHeight / 6 * 5))) / (el.parentElement.clientHeight / 6))));
-                console.log('between #ff00ff and #ff0000');
             }
             var rtvred = dectohex(colourtopicked.r);
             if (rtvred.length == 1) {
@@ -749,7 +687,6 @@ colourpickerClass.prototype = {
             if (rtvgreen.length == 0) {
                 rtvgreen = '00';
             }
-            console.log(colourtopicked.b);
             var rtvblue = dectohex(colourtopicked.b);
             if (rtvblue.length == 1) {
                 rtvblue = '0' + rtvblue;
@@ -758,7 +695,6 @@ colourpickerClass.prototype = {
                 rtvblue = '00';
             }
             rtv = '#' + rtvred + rtvgreen + rtvblue;
-            console.log(rtv);
             return rtv;
         } else {
             return '#ff0000';
@@ -891,10 +827,6 @@ colourpickerClass.prototype = {
                         if (alphaInHex.length == 1) {
                             alphaInHex = '0' + alphaInHex;
                         }
-                        console.log(rgbobj.r);
-                        console.log(rgbobj.g);
-                        console.log(rgbobj.b);
-                        console.log(rgbobj.alpha);
                         /*return { rgb: rgbobj, hexcodestr: '#' + redInHex + greenInHex + blueInHex + alphaInHex };*/
                         var fullred = Math.max(fcolourinRGB.r, scolourinRGB.r) - Math.min(fcolourinRGB.r, scolourinRGB.r);
                         var fullgreen = Math.max(fcolourinRGB.g, scolourinRGB.g) - Math.min(fcolourinRGB.g, scolourinRGB.g);
@@ -993,7 +925,6 @@ colourpickerClass.prototype = {
             /*var newColour2StopFromParam = colour2Stopclient;  It's the same as above. from now on, I'll separate HTML and JavaScript to work...(?) no, it's okay */
             var specialNewGrad = new this.newGrad(colour1, colour2, 'linear', direction);
             var colourtobereturned = specialNewGrad.getColourInGrad(at.at, at.from);
-            console.log(colourtobereturned);
             return colourtobereturned.hexcodestr;
         }
     },
@@ -1005,16 +936,13 @@ colourpickerClass.prototype = {
             var evTop = ev.clientY - el.parentElement.clientLeft;
             var colourpositionX = evLeft / elWidth;
             var colourpositionY = evTop / elHeight;
-            console.log(colourpositionX);
-            console.log(colourpositionY);
             var coordinateOnPalette = {
                 x: colourpositionX,
                 y: colourpositionY,
             };
             var xColour = this.getColourOnSomePosOfAGradOfTwoColours('#ffffff00', this.selectedColourNow + 'ff', 'left', { at: coordinateOnPalette.x, from: 0 });
             var yColour = this.getColourOnSomePosOfAGradOfTwoColours(this.selectedColourNow + '00', '#000000ff', 'bottom', { at: coordinateOnPalette.y, from: 1 });
-            console.log(xColour);
-            console.log(yColour);
+
             return this.getMixedColour(xColour, yColour);
         }
     },
@@ -1036,14 +964,12 @@ colourpickerClass.prototype = {
             thisobj.dragging = true;
         });
         createdPicker.els.scrollbar.el.addEventListener("mouseup", function (ev) {
-            console.log('hello');
             thisobj.dragging = false;
             createdPicker.els.scrollbar.els.scroll.el.style.position = 'relative';
             scrollbtn.style.position = 'relative';
             createdPicker.els.scrollbar.els.scroll.el.style.left = '-2em';
             var gotColour = thisobj.getColourOnPositionOfScroll(createdPicker.els.scrollbar.els.scroll.el, ev);
             startingcolour = gotColour;
-            console.log(startingcolour);
             createdPicker.els.palette.els.newPaletteInner.el.style.background = `linear-gradient(to bottom, ${startingcolour + '00'},#000000ff)`;
             createdPicker.els.palette.el.style.background = `linear-gradient(to left, ${startingcolour + 'ff'},#ffffff00)`;
             createdPicker.els.scrollbar.els.scroll.el.style.position = 'relative';
@@ -1057,7 +983,6 @@ colourpickerClass.prototype = {
         });
         createdPicker.els.scrollbar.els.scroll.el.addEventListener("mousemove", function (ev) {
             if (thisobj.dragging == true) {
-                console.log(ev.y);
                 createdPicker.els.scrollbar.els.scroll.el.style.position = 'relative';
                 scrollbtn.style.left = "-2em";
             }
@@ -1092,59 +1017,5 @@ colourpickerClass.prototype = {
         });
         paletteEl.style.background = `linear-gradient(to left, ${this.selectedColourNow + 'ff'},#ffffff00)`;
         createdPicker.els.palette.els.newPaletteInner.el.style.background = `linear-gradient(to bottom, ${this.selectedColourNow + '00'},#000000ff)`;
-    }
-}
-class mathematical {
-    constructor() { }
-    funcsandGraph = class {
-        constructor() {
-        }
-        graph = [];
-        funcs = [];
-        getfunc(funcnameparam) {
-            var funcname = new String(funcnameparam);
-            for (var i = 0; i < this.funcs.length; i++) {
-                if (this.funcs[i].funcname == funcname) {
-                    return { func: this.funcs[i], idx: i };
-                }
-            }
-        };
-        mathematicalFunctions(Xparam, funcnameparam) {
-            var y = 0;
-            var x = Number(Xparam);
-            var funcname = new String(funcnameparam);
-            var functouseObj = this.getfunc(funcname);
-            var functouse = functouseObj.func;
-            if (typeof functouse == 'function') {
-                y = functouse(x);
-                this.graph[x][y] = { funcname: funcname };
-            }
-            return y;
-        };
-        /*limit(xtogo,funcnameparam){
-            var limitvalue=Number(xtogo);
-            var funcname=new String(funcnameparam);
-            var functouseObj=this.getfunc(funcname);
-            var functouse = functouseObj.func;
-            var funcvalue={};
-        };*/
-        getaCoordinateVal(xpr, ypr) {
-            var x = Number(xpr);
-            var y = Number(ypr);
-            return this.graph[x][y];
-        };
-        getaCoordinateValFunc(func, xpr) {
-            var x = Number(xpr);
-            var y = this.mathematicalFunctions(x, new String(func));
-            return this.getaCoordinateVal(x, y);
-        }
-        updateGraph(plusxparam, minusxparam, plusyparam, minusyparam) {
-            var maxx = Number(plusxparam + minx);
-            var minx = Number(minusxparam);
-            var maxy = Number(plusyparam + miny);
-            var miny = Number(minusyparam);
-            this.graph[maxx][maxy] = {};
-            this.graph[minx][miny] = {};
-        };
     }
 }
