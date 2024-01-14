@@ -1,0 +1,55 @@
+colourpicker {
+    background: #fff;
+}
+
+colourpicker .picker-inner {
+    display: flex;
+}
+
+colourpicker .picker-inner .palette {
+    width: 20em;
+    height: 20em;
+    float: left;
+}
+
+colourpicker .picker-inner .palette .paletteInner {
+    width: 20em;
+    height: 20em;
+}
+
+colourpicker .picker-inner .scrollbar {
+    width: 2em;
+    height: 20em;
+    padding-left: 1em;
+    margin-left: 1em;
+    float: left;
+}
+
+colourpicker .picker-inner .scrollbar .scroll {
+    left: -2em;
+    position: relative;
+    width: 2em;
+    height: 2em;
+    border-right: 2em solid #777;
+    border-bottom: 1em solid transparent;
+    border-top: 1em solid transparent;
+}
+
+colourpicker .picker-inner .palette .pointer {
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    border: 0.25em groove #777;
+    position: relative;
+    top: -10em;
+    display: inline-block;
+}
+
+button.circle {
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    border: 0.25em groove #777;
+    display: inline-block;
+    font-size: 1em;
+}
