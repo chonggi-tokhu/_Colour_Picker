@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>colour picker</title>
+    <link rel="stylesheet" href="./files/css/colour_picker.css">
+    <script src="./files/js/decs.js"></script>
+    <script src="./files/js/colour_picker_3.js"></script>
+</head>
+
+<body>
+    <div class="body">
+        <header>
+            <h2>made by colourgrey(on github,chonggi-tokhu)</h2>
+            <h5>do not drag pointer, just click.</h5>
+        </header>
+        <colourpicker>
+        </colourpicker>
+        <p id="demo" contenteditable="true" style="height: 1.4em;"></p>
+        <div>
+            <p>
+                <span>It's my own work. there is no licence rule and you can use my ideas but don't forget fact that I
+                    made
+                    this <span style="font-weight: bold;">myself</span>!!!</span>
+            </p>
+        </div>
+    </div>
+    <script>
+        var newcolourpicker = null;
+        (function () {
+            if (!window['CGRColourPicker'] || window['CGRColourPicker'] === null) {
+                return;
+            }
+            newcolourpicker = new CGRColourPicker();
+            newcolourpicker.setBackGround(0);
+        })()
+    </script>
+</body>
+
+</html>
